@@ -6,6 +6,9 @@
 body {
     height: 100%;
     font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #calculator {
@@ -13,7 +16,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    margin: 20%;
+    margin: 15%;
+    padding: 40px;
+    background-color: #aaa;
+    border-radius: 10px;
 }
 
 #display {
