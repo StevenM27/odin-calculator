@@ -89,17 +89,20 @@ operatorButtons.forEach(operator => {
             num1 = operate(operatorValue, num1, num2);
             displayValue = num1 + "";
             display.textContent = displayValue;
-            operatorValue = "";
+            displayValue = "0";
+            operatorValue = operator.id;
         }
     });
 });
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () => {
-    num2 = parseInt(displayValue);
+    if (operatorValue !== "") {
+        num2 = parseInt(displayValue);
 
-    const solution = operate(operatorValue, num1, num2);
-    displayValue = solution + "";
-    display.textContent = displayValue;
-    operatorValue = "";
+        const solution = operate(operatorValue, num1, num2);
+        displayValue = solution + "";
+        display.textContent = displayValue;
+        operatorValue = "";
+    }
 });
